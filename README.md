@@ -1,8 +1,8 @@
 # OpenStack Exporter for Prometheus
 
-## I had a problem after adding the version 6 IP to this (network_ip_availabilities_total metrics cus level=error msg="math/big: cannot unmarshal "1.1805916207174113e+21" into a *big.Int" ) and after checking I added a variable to the code to show me only the version 4 IPs, and my problem was solved. But this solution is not logical, it can only help in some situations.
+### I had a problem after adding the IPversion 6 To OPENSTACK And Got these error: (network_ip_availabilities_total metrics cus level=error msg="math/big: cannot unmarshal "1.1805916207174113e+21" into a *big.Int" ) and after checking I added a variable to the code to show me only the version 4 IPs, and my problem was solved. But this solution is not logical, it can only help in some situations.
 
-### I just add IPVersion: "4" into the neutron 
+### I just add IPVersion: "4" into the exporters/neutron 
 
 ```sh
 // ListNetworkIPAvailabilities : count total number of used IPs per Network
@@ -16,7 +16,7 @@ func ListNetworkIPAvailabilities(exporter *BaseOpenStackExporter, ch chan<- prom
 		return err
 	}
 ```
-
+this is org repo : * https://github.com/openstack-exporter/openstack-exporter
 
 [![CI](https://github.com/openstack-exporter/openstack-exporter/actions/workflows/ci.yaml/badge.svg)](https://github.com/openstack-exporter/openstack-exporter/actions/workflows/ci.yaml)
 
